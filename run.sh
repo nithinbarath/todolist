@@ -10,4 +10,4 @@ done
 alembic upgrade head && alembic revision --autogenerate -m "latest revisions" && alembic upgrade head
 
 # Run Service
-uvicorn --host=0.0.0.0 --port=9559 --workers=10 --limit-concurrency=100 --backlog=100 --use-colors backend.application:app --reload
+uvicorn --host=0.0.0.0 --port=9559 --workers=10 --limit-concurrency=100 --backlog=100 --use-colors backend.router.api:app --reload
