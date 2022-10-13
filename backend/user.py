@@ -1,10 +1,9 @@
 from fastapi import APIRouter
-from endpoint import question, todolist
+from endpoint import  todolist
 
 
 api_router = APIRouter()
 
 
-api_router.include_router(question.router)
 api_router.include_router(todolist.router)
 
