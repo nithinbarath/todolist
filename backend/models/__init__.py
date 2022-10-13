@@ -1,1 +1,1 @@
-from models.question import Question
+from .question import Question
