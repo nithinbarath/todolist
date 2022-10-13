@@ -2,7 +2,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from models.todolist import Todolist
-from schemas.todolist import CreateTodolist
+from schemas.todolist import CreateTodolist, UpdateTodolist, DeleteTodolist
 
 
 
@@ -24,3 +24,30 @@ def get_todolist(session: Session):
     record = session.query(Todolist).all()
 
     return record
+
+def update_todolist(session: Session, list:UpdateTodolist):
+
+    record = session.query(Todolist).filter(Todolist.id==list.id).first()
+
+    if record:
+        record.notes = list.notes
+        session.commit()
+        session.refresh(record)
+        return record
+    else:
+        raise HTTPException(status_code=402,detail='invalid value')
+
+def delete_todolist(session: Session, list_id:DeleteTodolist):
+
+    record = session.query(Todolist).filter(Todolist.id == list_id.id).first()
+
+    if record:
+
+        session.delete(record)
+        session.commit()
+
+        return 'deleted successfully'
+    else:
+
+         raise HTTPException(status_code=402,detail='invalid value')
+
