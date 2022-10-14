@@ -1,8 +1,9 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-from schemas.todolist import CreateTodolist, UpdateTodolist, DeleteTodolist
 from models.todolist import Todolist
+from schemas.todolist import CreateTodolist, UpdateTodolist, DeleteTodolist
+
 
 
 

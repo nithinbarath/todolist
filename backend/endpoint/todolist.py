@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 from fastapi import APIRouter,Depends
 
+from application import get_db_session
 from schemas.todolist import CreateTodolist, UpdateTodolist, DeleteTodolist
 from crud.todolist import create_list, get_todolist, update_todolist, delete_todolist
-from application import get_db_session
 
 router = APIRouter()
 
