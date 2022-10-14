@@ -1,12 +1,8 @@
-from starlette.middleware.cors import CORSMiddleware
-from starlette.middleware import Middleware
-from fastapi import FastAPI
 from os import environ
-import uvicorn
-
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
 
 
 DATABASE_URL = environ['DB_URI']
@@ -25,33 +21,3 @@ def get_db_session():
         yield db
     finally:
         db.close()
-
-
-
-
-
-app = FastAPI()
-
-origins= [
-    'http://localhost:8000',
-    'http://localhost:8080',
-    'http://127.0.0.1:8000',
-    'http://127.0.0.1:8080'
-]
-
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
-)
-
-# app.include_router(verify_router, prefix="/api/v1")
-# app.include_router(todolist_router, prefix="/api/v1")
-
-
-if __name__ == '__main__':
-    uvicorn.run(app, port=9559, host="0.0.0.0")
-

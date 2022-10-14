@@ -1,8 +1,8 @@
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import  FastAPI
 import logging
+from fastapi import  FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from user import api_router
+from .todolist import api_router
 
 
 logger = logging.getLogger(__name__)
@@ -27,4 +27,4 @@ app.add_middleware(
 )
 
 
-app.include_router(api_router,prefix='/api')
+app.include_router(api_router,prefix='/api',tags=["todolist"])
