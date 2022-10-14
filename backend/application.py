@@ -8,7 +8,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
 
-# from testing import router as verify_router
 
 DATABASE_URL = environ['DB_URI']
 print(DATABASE_URL)
