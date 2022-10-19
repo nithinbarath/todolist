@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "database",
+            "database": "database",
+            "username": "developer",
+            "password": "developer"
+        }
+    ],
+    "python.analysis.extraPaths": [
+        "./backend"
+    ]
+}
