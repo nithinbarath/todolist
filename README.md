@@ -30,4 +30,4 @@ To see logs run
 
 ``` docker-compose logs -f -t```
 
-connect to the postgresql database by using congigurations in ```env/dev.env``` file
+connect to the postgresql database by using configurations in ```env/dev.env``` file
