@@ -27,6 +27,10 @@ Everything is containerized from backend to the database. So all you need is Doc
 
 ```docker-compose up --build```
 
+To see logs run
+
+``` docker-compose logs -f -t```
+
 connect to the postgresql database by using configurations in ```env/dev.env``` file
 
 Open http://localhost:9559 to view it in your browser.
@@ -41,6 +45,3 @@ You will see the automatic interactive API documentation (provided by Swagger UI
 And now, go to http://127.0.0.1:8000/redoc.
 You will see the alternative automatic documentation (provided by ReDoc):
 
-To see logs run
-
-``` docker-compose logs -f -t```
