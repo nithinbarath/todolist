@@ -29,3 +29,5 @@ Everything is containerized from backend to the database. So all you need is Doc
 To see logs run
 
 ``` docker-compose logs -f -t```
+
+connect to the postgresql database by using congigurations in ```env/dev.env`` file
