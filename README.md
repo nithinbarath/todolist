@@ -37,11 +37,11 @@ Open http://localhost:9559 to view it in your browser.
 
 ##### Interactive API docs
 
-Now go to http://127.0.0.1:9559/docs.
+Now go to http://localhost:9559/docs.
 You will see the automatic interactive API documentation (provided by Swagger UI):
 
 ##### Alternative API docs
 
-And now, go to http://127.0.0.1:9559/redoc.
+And now, go to http://localhost:9559/redoc.
 You will see the alternative automatic documentation (provided by ReDoc):
 
